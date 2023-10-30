@@ -1,0 +1,76 @@
+
+.App{
+  font-family: "monserrat";
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #27935b85;; 
+}
+.Dropdown{
+   flex-direction: column;
+}
+.heading{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: left;
+    margin-top: 80px;
+}
+.input-field{
+    margin-top: 30px;
+     flex-direction: column;
+
+}
+.input-field label{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.input-field select{
+    padding: 8px;
+    width: 100%;
+
+}
+.input-field option{
+    padding: 8px;
+    width: 100%;
+
+}
+.button-style{
+    margin-top: 30px;
+    font-family: "monserrat";
+    padding: 6px;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 10px;
+    font-weight: 500;
+    background-color:  #dc3545de;;
+    color: white;
+    border: 1px solid #ccc;
+}
+
+@media screen and (min-width:600px) {
+
+   .Dropdown{
+   flex-direction: column;
+   text-align:left;
+   }
+   .button-style{
+    text-align: center;
+    align-items: center;
+}
+.input-field{
+    flex-direction: column;
+}
+.input-field select{
+    padding: 8px;
+    margin-left: 10px;
+    width: 60%;
+
+}
+
+}
+@media screen and (min-width:600px)  and (min-width:700px){
+    .input-field select{
+        padding: 8px;
+    
+    }
+}
