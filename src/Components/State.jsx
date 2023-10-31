@@ -5,6 +5,8 @@ function State() {
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState('');
   const [states, setStates] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
+
 
   useEffect(() => {
     fetch('https://state-server-vwii.onrender.com/countries')
@@ -26,10 +28,18 @@ function State() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
+    if (!selectedCountry || states.length === 0) {
+      setErrorMessage(true);
+    } else {
+      setSelectedCountry('');
+      setStates([]);
+      setErrorMessage('');
+    }
   };
 
   return (
-    <div className='state-form' onSubmit={handleSubmit}>
+    <div className='state-form'>
     <div className="container mt-3">
         <div className='row'>
           <div className='col-md-12'>
@@ -55,6 +65,7 @@ function State() {
                 </option>
               ))}
             </select>
+            {errorMessage && !selectedCountry && <p className="error-message">Please select Country</p>}
           </div>
           </div>
           <div className='col-md-5'>
@@ -68,6 +79,7 @@ function State() {
                 </option>
               ))}
             </select>
+            {errorMessage && !states && <p className="error-message">Please select states</p>}
             </div>
             </div>
             <div className='col-md-2'>
